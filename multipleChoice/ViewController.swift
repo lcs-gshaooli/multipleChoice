@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate{
 
+    @IBOutlet weak var howManyQuestions: UITextField!
+    
+    @IBOutlet weak var studentAnswers: UITextField!
+    
+    @IBOutlet weak var correctAnswers: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
 
+    @IBOutlet weak var checkStudent: UITextView!
 }
 
