@@ -30,27 +30,22 @@ class ViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func checkAnswer(_ sender: Any) {
         
-        // Variable represent the amount of answers that are correct
-        // var correctAnswers = 0
         
         // guard if no imput is provide
-        guard let questionsAmountString = questionsAmount.text, let questionsAmount = Int (questionsAmountString)
-            else {
-                outputCheck.text = "Please enter an integer value greater than 0"
-                return
+        guard let questionsAmountString = questionsAmount.text, let questionsAmount = Int (questionsAmountString), questionsAmount > 0 else {
+            outputCheck.text = "Please enter an integer value greater than 0"
+            return
         }
         
         // Number of students answers matches with the number of questions
-        guard let studentInput = studentAnswers.text, studentInput.count == questionsAmount
-            else {
-                outputCheck.text  = "Please be sure you enter exactly \(questionsAmount) student answers"
-                return
+        guard let studentInput = studentAnswers.text, studentInput.count == questionsAmount else {
+            outputCheck.text  = "Please be sure you enter exactly \(questionsAmount) student answers"
+            return
         }
         // Correct answers match with the number of questions
-        guard let correctInput = correctAnswers.text, correctInput.count == questionsAmount
-            else {
-                outputCheck.text = "Please be sure you enter exactly \(questionsAmount) correct answers"
-                return
+        guard let correctInput = correctAnswers.text, correctInput.count == questionsAmount else {
+            outputCheck.text = "Please be sure you enter exactly \(questionsAmount) correct answers"
+            return
         }
         //Allow to write only A, B, C, D, E into the students answer text field
         let allowedAnswers = "ABCDE"
@@ -66,6 +61,8 @@ class ViewController: UIViewController, UITextViewDelegate {
                     return
                 }
                 
+                // Variable represent the amount of answers that are correct
+               
                 
             }
         }
