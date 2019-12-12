@@ -8,20 +8,53 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextViewDelegate{
-
-    @IBOutlet weak var howManyQuestions: UITextField!
+class ViewController: UIViewController, UITextViewDelegate {
+    
+    @IBOutlet weak var questionsAmount: UITextField!
     
     @IBOutlet weak var studentAnswers: UITextField!
     
     @IBOutlet weak var correctAnswers: UITextField!
     
+    @IBOutlet weak var outputCheck: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
-    @IBOutlet weak var checkStudent: UITextView!
-}
-
+    
+    // questionsAmount.text = ""
+    // studentAnswers.text = ""
+    // correctAnswers.text = ""
+    // outputCheck.text = ""
+    
+    @IBAction func checkAnswer(_ sender: Any) {
+        
+        // Variable represent the amount of answers that are correct
+        // var correctAnswers = 0
+        
+        // guard if no imput is provide
+        guard let questionsAmountString = questionsAmount.text, let questionsAmount = Int (questionsAmountString)
+            else {
+                outputCheck.text = "Please enter an integer value greater than 0"
+                return
+        }
+        
+        // Number of students answer matches with the number of questions
+        guard let studentInput = studentAnswers.text, studentInput.count == questionsAmount
+            else {
+                    outputCheck.text  = "Please be sure you enter exactly \(questionsAmount) student answers"
+                    return
+        }
+                    
+      guard let correctInput = correctAnswers.text, correctInput.count == questionsAmount
+        else {
+                outputCheck.text = "Please be sure you enter exactly \(questionsAmount) correct answers"
+                        return
+                    }
+                    
+                }
+                
+                
+        }
+    

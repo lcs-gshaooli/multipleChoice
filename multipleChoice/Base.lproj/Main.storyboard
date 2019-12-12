@@ -54,14 +54,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGN-G5-KCF">
-                                <rect key="frame" x="77" y="397" width="260" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Check Student Answers">
-                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="waq-3b-Uu1">
                                 <rect key="frame" x="40" y="465" width="320" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -86,15 +78,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGN-G5-KCF">
+                                <rect key="frame" x="73" y="388" width="260" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Check Student Answers">
+                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nzj-1F-mse"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50080033810000002" green="0.73636691009999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="checkStudent" destination="TRc-AW-ZBi" id="STw-mr-wCh"/>
                         <outlet property="correctAnswers" destination="Dia-Zp-4eR" id="pME-87-uXM"/>
-                        <outlet property="howManyQuestions" destination="Ggc-Zw-QK2" id="zCg-SL-B3P"/>
-                        <outlet property="studentAnswer" destination="GSz-Jb-uD4" id="j8c-5l-oc8"/>
+                        <outlet property="outputCheck" destination="TRc-AW-ZBi" id="fFb-3G-5AM"/>
+                        <outlet property="questionsAmount" destination="Ggc-Zw-QK2" id="wCV-Tr-5BK"/>
+                        <outlet property="studentAnswers" destination="GSz-Jb-uD4" id="pMx-UY-Rvw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
