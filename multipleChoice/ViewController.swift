@@ -40,13 +40,13 @@ class ViewController: UIViewController, UITextViewDelegate {
                 return
         }
         
-        // Number of students answer matches with the number of questions
+        // Number of students answers matches with the number of questions
         guard let studentInput = studentAnswers.text, studentInput.count == questionsAmount
             else {
                     outputCheck.text  = "Please be sure you enter exactly \(questionsAmount) student answers"
                     return
         }
-                    
+              // Correct answers match with the number of questions
       guard let correctInput = correctAnswers.text, correctInput.count == questionsAmount
         else {
                 outputCheck.text = "Please be sure you enter exactly \(questionsAmount) correct answers"
