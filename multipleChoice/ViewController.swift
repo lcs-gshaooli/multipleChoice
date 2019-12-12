@@ -43,18 +43,34 @@ class ViewController: UIViewController, UITextViewDelegate {
         // Number of students answers matches with the number of questions
         guard let studentInput = studentAnswers.text, studentInput.count == questionsAmount
             else {
-                    outputCheck.text  = "Please be sure you enter exactly \(questionsAmount) student answers"
-                    return
+                outputCheck.text  = "Please be sure you enter exactly \(questionsAmount) student answers"
+                return
         }
-              // Correct answers match with the number of questions
-      guard let correctInput = correctAnswers.text, correctInput.count == questionsAmount
-        else {
+        // Correct answers match with the number of questions
+        guard let correctInput = correctAnswers.text, correctInput.count == questionsAmount
+            else {
                 outputCheck.text = "Please be sure you enter exactly \(questionsAmount) correct answers"
-                        return
-                    }
-                    
+                return
+        }
+        //Allow to write only A, B, C, D, E into the students answer text field
+        let allowedAnswers = "ABCDE"
+        for studentsLetters in studentInput {
+            if allowedAnswers.contains(studentsLetters) == false {
+                outputCheck.text = "Student answers contain invalid choices. Please ensure that only characters A,B,C,D or E are used."
+                return
+            }
+            //Allow to write only A, B, C, D, E into the correct answer text field
+            for answers in correctInput {
+                if allowedAnswers.contains(answers) == false {
+                    outputCheck.text = "Correct answers contain invalid choices. Please ensure that only characters A,B,C,D or E are used."
+                    return
                 }
                 
                 
+            }
         }
+        
+        
+    }
     
+}
